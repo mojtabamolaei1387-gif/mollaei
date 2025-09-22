@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کم‌کننده حرفه‌ای کیفیت عکس</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IranNastaliq&family=IRANSans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>کم‌کننده حرفه‌ای کیفیت عکس</h1>
+            <p>حرفه‌ای کیفیت عکس‌های خود را کاهش دهید و حجم فایل را بهینه کنید</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                    <p>برای آپلود عکس، فایل را اینجا بکشید و رها کنید</p>
+                    <p>یا</p>
+                    <button id="uploadBtn" class="btn primary">انتخاب عکس</button>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+            </div>
+            
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" alt="پیش‌نمایش عکس">
+                </div>
+                
+                <div class="quality-controls">
+                    <div class="control-group">
+                        <label for="qualitySlider">کیفیت عکس:</label>
+                        <div class="slider-container">
+                            <input type="range" id="qualitySlider" min="10" max="100" value="80" step="1">
+                            <span id="qualityValue">80%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="formatSelect">فرمت خروجی:</label>
+                        <select id="formatSelect">
+                            <option value="jpeg">JPEG</option>
+                            <option value="webp">WEBP</option>
+                            <option value="png">PNG</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="sizeSlider">حجم حداکثری (KB):</label>
+                        <div class="slider-container">
+                            <input type="range" id="sizeSlider" min="10" max="1000" value="500" step="10">
+                            <span id="sizeValue">500 KB</span>
+                        </div>
+                    </div>
+                    
+                    <button id="processBtn" class="btn primary">پردازش و دانلود</button>
+                </div>
+            </div>
+        </main>
+        
+        <div class="result-section" id="resultSection" style="display: none;">
+            <h2>عکس پردازش شده</h2>
+            <div class="result-preview">
+                <img id="resultImage" alt="عکس پردازش شده">
+            </div>
+            <div class file-info>
+                <p>حجم فایل: <span id="fileSize">0 KB</span></p>
+                <p>فرمت: <span id="fileFormat">JPEG</span></p>
+            </div>
+            <button id="downloadBtn" class="btn success">دانلود عکس</button>
+            <button id="newImageBtn" class="btn secondary">عکس جدید</button>
+        </div>
+        
+        <footer>
+            <p>© 2023 کم‌کننده حرفه‌ای کیفیت عکس | طراحی شده با ❤️</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
